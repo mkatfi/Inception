@@ -15,7 +15,6 @@ down:
 	sudo rm -rf ~/data
 	docker container rm -f mariadb wordpress nginx
 	docker rmi -f mariadb wordpress nginx
-
 	docker compose -f srcs/docker-compose.yml down -v
 	
 re: down up
