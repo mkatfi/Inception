@@ -1,12 +1,5 @@
 FROM debian:11
 
-
-ENV MYSQL_DATABASE=mariadb
-ENV MYSQL_USER=admin
-ENV MYSQL_PASSWORD=1234
-ENV SQL_ROOT_PASSWORD=1234
-ENV db_host=mariadb
-
 RUN apt-get update -y
 
 # Install wget and PHP dependencies

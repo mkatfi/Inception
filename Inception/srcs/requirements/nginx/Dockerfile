@@ -1,10 +1,10 @@
 FROM debian:11
 
-RUN apt-get update -y
-RUN apt-get install nginx -y
+RUN apt-get update -y && apt-get install nginx -y
+
 RUN apt-get install -y openssl 
 
-RUN mkdir -p /etc/nginx/ssl 
+RUN mkdir -p /etc/nginx/ssl
 
 RUN openssl req -x509 -nodes \
     -keyout /etc/nginx/ssl/private-key.key \
