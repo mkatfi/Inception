@@ -1,11 +1,11 @@
 
-# Start the MariaDB service
-service mariadb start
-# Wait for the database to be ready
 # until mysqladmin ping -h "localhost" -u"root" ; do
 #     echo "Waiting for MariaDB to be ready..."
 # done
 
+# Start the MariaDB service
+service mariadb start
+# Wait for the database to be ready
 sleep 2
 # Create a database if it doesn't already exist
 mariadb -e "CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;"

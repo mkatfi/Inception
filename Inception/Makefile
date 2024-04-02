@@ -4,17 +4,19 @@ all: build up
 build:
 	docker compose -f srcs/docker-compose.yml build
 
-up:
-	mkdir -p ~/data/wordpress
-	mkdir -p ~/data/mariadb
+up: build
+	mkdir -p /home/mkatfi/data/wordpress
+	mkdir -p /home/mkatfi/data/mariadb
 	docker compose -f srcs/docker-compose.yml up -d
-
 down:
-	sudo rm -rf ~/data/wordpress/*
-	sudo rm -rf ~/data/mariadb/*
-	sudo rm -rf ~/data
-	docker container rm -f mariadb wordpress nginx
-	docker rmi -f mariadb wordpress nginx
 	docker compose -f srcs/docker-compose.yml down -v
-	
-re: down up
+clean:
+	sudo rm -rf /home/mkatfi/data/wordpress/*
+	sudo rm -rf /home/mkatfi/data/mariadb/*
+	sudo rm -rf /home/mkatfi/data
+	docker container rm -f mariadb wordpress nginx
+
+fclean: clean
+	sudo docker system prune -af
+
+re: clean down up
