@@ -1,9 +1,9 @@
-version: '3'
+version: '3.7'
 
 services:
   mariadb:
     container_name: mariadb
-    image: mariadb:1337
+    image: mariadb
     networks:
       - inception
     build: 
@@ -19,7 +19,7 @@ services:
 
   wordpress:
     container_name: wordpress
-    image: wordpress:1337
+    image: wordpress
     env_file: .env
     volumes:
       - wordpress:/var/www/wordpress
@@ -37,7 +37,7 @@ services:
 
   nginx:
     container_name: nginx
-    image: nginx:1337
+    image: nginx
     networks:
       - inception
     depends_on:
@@ -56,6 +56,7 @@ services:
 
 networks:
   inception:
+    name: inception
 
 volumes:
   mariadb:
@@ -64,6 +65,7 @@ volumes:
       type: 'none'
       o: 'bind'
       device: '/home/mkatfi/data/mariadb'
+      
   wordpress:
     driver: local
     driver_opts:

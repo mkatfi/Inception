@@ -15,8 +15,9 @@ COPY ./conf/nginx.conf etc/nginx/sites-enabled/
 
 RUN mkdir -p /var/run/nginx
 
+#www-data is a user of fpm  for secutrity reseon 
 RUN chmod 0777 /var/www/html && chown -R www-data:www-data /var/www/html
 
-# COPY ./index.html /var/www/html
+RUN rm -rf /etc/nginx/sites-enabled/default
 
 CMD [ "nginx", "-g", "daemon off;" ]

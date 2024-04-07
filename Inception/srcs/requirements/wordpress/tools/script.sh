@@ -2,12 +2,7 @@
 
 sed -i -e 's/.*listen = .*/listen = 9000/' /etc/php/7.4/fpm/pool.d/www.conf
 
-# until mariadb -h "$DB_host"  -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e ";"  ; do
-# 	echo "Waiting for MariaDB to be ready..."
-# 	sleep 5
-# done
 sleep 5
-# wp core download --allow-root
 
 cd /var/www/wordpress
 
