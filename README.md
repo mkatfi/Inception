@@ -1,7 +1,8 @@
 
 # Inception  
 
-![Inception Project Banner](https://github.com/user-attachments/assets/inception-banner.png)  
+![Inception Project Banner](https://github.com/user-attachments/assets/53f35443-b65b-4ba8-ac97-13b680d96288)
+
 
 *A DevOps-focused journey into Docker, system orchestration, and infrastructure management.*  
 
